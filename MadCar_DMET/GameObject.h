@@ -2,8 +2,6 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
-/* Structs Definitions */
-
 struct Obstacle {
 	int id;
 	bool on = false;
@@ -13,7 +11,8 @@ struct Obstacle {
 	float hit;
 	float width, height;
 	double real_width, real_height;
-}obstacles[16];
+	bool hitted;
+}obstacles[20];
 
 struct Powerup {
 	int id;
@@ -24,13 +23,15 @@ struct Powerup {
 	float hit;
 	float width, height;
 	double real_width, real_height;
-}powerups[8];
+	double theta;
+}powerups[20];
 
 // Constants and Related Variables
-int OBSTACLES_MAX_INDEX = 15;
+int OBSTACLES_MAX_INDEX = 19;
 int obstacles_counter = 0;
 int POWERUPS_MAX_INDEX = 7;
 int powerups_counter = 0;
+
 
 // --- Object Creators & Generators
 bool generateRandomObject(void);
